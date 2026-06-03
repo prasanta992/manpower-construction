@@ -3,40 +3,7 @@
 
 @section('content')
 
-<!-- <section class="relative min-h-screen flex items-center overflow-hidden">
-    <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover">
-        <source src="/videos/construction.mp4" type="video/mp4">
-    </video>
-    <div class="absolute inset-0 bg-gradient-to-r from-stone-950 via-stone-950/80 to-transparent"></div>
-
-    <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl animate-pulse"></div>
-
-    <div class="relative z-10 max-w-7xl mx-auto px-6 md:px-12 pt-24 w-full">
-        <span class="text-xs uppercase font-black tracking-widest text-amber-500 bg-amber-500/10 px-4 py-2 rounded-full border border-amber-500/20">
-            Industrial Engineering Redefined
-        </span>
-        <h1 class="text-5xl md:text-7xl lg:text-8xl font-black tracking-tight mt-6 leading-tight max-w-4xl">
-            Building The Future <br>
-            <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-500">
-                With Precision.
-            </span>
-        </h1>
-        <p class="mt-8 max-w-2xl text-base md:text-xl text-stone-400 leading-relaxed">
-            Professional construction engineering, heavy equipment asset logistics, and highly qualified workforce deployments across five continents.
-        </p>
-        <div class="mt-10 flex flex-wrap gap-4">
-            <a href="#projects" class="px-8 py-4 bg-amber-500 hover:bg-amber-400 text-black font-bold uppercase tracking-wider text-xs rounded-xl shadow-xl shadow-amber-500/20 transition-all duration-300 transform hover:-translate-y-1">
-                Explore Portfolio
-            </a>
-            <a href="#services" class="px-8 py-4 bg-stone-900 hover:bg-stone-800 border border-stone-800 text-white font-bold uppercase tracking-wider text-xs rounded-xl transition-all duration-300">
-                Our Capabilities
-            </a>
-        </div>
-    </div>
-</section> -->
 <section class="relative min-h-screen flex items-center overflow-hidden">
-    
-    <!-- YouTube Background Wrapper -->
     <div class="absolute inset-0 w-full h-full pointer-events-none">
         <iframe 
             class="absolute top-1/2 left-1/2 w-[100vw] h-[56.25vw] min-h-[100vh] min-w-[177.77vh] -translate-x-1/2 -translate-y-1/2"
@@ -44,13 +11,11 @@
             frameborder="0" 
             allow="autoplay; encrypted-media" 
             allowfullscreen>
-        </iframe>
+         grab</iframe>
     </div>
 
-    <!-- Dark High-Contrast Overlay -->
     <div class="absolute inset-0 bg-gradient-to-r from-stone-950 via-stone-950/80 to-stone-900/40"></div>
 
-    <!-- Content Layer -->
     <div class="relative z-10 max-w-7xl mx-auto px-6 md:px-12 pt-24 w-full">
         <span class="inline-block text-xs uppercase font-black tracking-[0.3em] text-amber-500 bg-amber-500/10 px-4 py-2 rounded-full border border-amber-500/20 mb-6">
             Global Infrastructure Excellence
@@ -80,11 +45,11 @@
         </div>
     </div>
 
-    <!-- Scroll Indicator -->
     <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
         <i class="fa-solid fa-chevron-down text-stone-500"></i>
     </div>
 </section>
+
 <section class="relative z-20 -mt-16 max-w-7xl mx-auto px-6 grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
     @foreach([
         ['stat' => '320+', 'label' => 'Megaprojects Delivered', 'icon' => 'fa-city'],
@@ -119,7 +84,7 @@
         ] as $index => $srv)
         <div class="bg-stone-900 border border-stone-800/60 p-8 rounded-3xl hover:border-amber-500/40 transition-all duration-500 group relative overflow-hidden">
             <div class="absolute -right-6 -bottom-6 text-stone-950/40 font-black text-9xl group-hover:text-stone-950 transition-colors duration-500">
-                0{{ $index+1 }}
+                026
             </div>
             <div class="w-14 h-14 bg-amber-500 rounded-2xl flex items-center justify-center text-black text-2xl font-bold mb-8 shadow-lg shadow-amber-500/10">
                 <i class="fa-solid {{ $srv['icon'] }}"></i>
@@ -134,7 +99,7 @@
     </div>
 </section>
 
-<section id="projects" class="py-32 bg-stone-900/40 border-y border-stone-900 px-6">
+<section id="projects" class="py-32 bg-stone-900/40 border-y border-stone-900/60 px-6">
     <div class="max-w-7xl mx-auto">
         <div class="flex flex-col md:flex-row md:items-end justify-between mb-20">
             <div>
@@ -147,47 +112,122 @@
         </div>
 
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            @for($i=1; $i<=3; $i++)
-            <div class="overflow-hidden rounded-3xl bg-stone-950 border border-stone-900 group shadow-xl">
-                <div class="relative overflow-hidden h-72">
-                    <img src="https://picsum.photos/800/600?random={{$i}}" alt="Project Image" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0">
-                    <div class="absolute inset-0 bg-gradient-to-t from-stone-950 via-transparent to-transparent opacity-80"></div>
-                    <span class="absolute top-4 left-4 bg-stone-900/90 backdrop-blur-md border border-white/10 text-stone-300 text-[10px] font-bold tracking-widest px-3 py-1.5 uppercase rounded-lg">
-                        Infrastructure
-                    </span>
+            @php
+                $megaprojects = [
+                    [
+                        'title' => 'Interstate Viaduct & Bridge System',
+                        'location' => 'Metropolitan Sector Fleet',
+                        'tag' => 'Heavy Infra',
+                        'image' => 'https://th.bing.com/th/id/OIP.jdaKQPyygslWZaEHTHZqlgHaE4?w=274&h=181&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3',
+                        'specs' => ['14.2km Elevated Deck', 'High-Load Foundations', 'Zero Accident Hours']
+                    ],
+                    [
+                        'title' => 'High-Span Industrial Grid Hub',
+                        'location' => 'Coastal Logistics Terminal',
+                        'tag' => 'Logistics Facility',
+                        'image' => 'https://th.bing.com/th/id/OIP.HFehPZfXtBhVJTPGkn0GOgHaDR?w=328&h=154&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3',
+                        'specs' => ['Pre-Engineered Framing', 'Fiber-Reinforced Slabs', 'Optimized Fleet Docks']
+                    ],
+                    [
+                        'title' => 'High-Rise Commercial Structure',
+                        'location' => 'Central Business District',
+                        'tag' => 'Civil Engineering',
+                        'image' => 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80',
+                        'specs' => ['Slip-form Concrete Core', 'Seismic Grade Bracing', 'LEED-Certified Plan']
+                    ]
+                ];
+            @endphp
+
+            @foreach($megaprojects as $project)
+            <div class="overflow-hidden rounded-3xl bg-stone-950 border border-stone-800/60 group shadow-2xl flex flex-col justify-between">
+                <div>
+                    <div class="relative overflow-hidden h-72">
+                        <img src="{{ $project['image'] }}" alt="{{ $project['title'] }}" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-stone-950 via-transparent to-transparent opacity-80"></div>
+                        <span class="absolute top-4 left-4 bg-amber-500 text-stone-950 text-[10px] font-black tracking-widest px-3 py-1.5 uppercase rounded-lg shadow-md">
+                            {{ $project['tag'] }}
+                        </span>
+                    </div>
+                    
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold group-hover:text-amber-500 transition-colors duration-300">{{ $project['title'] }}</h3>
+                        <p class="text-stone-400 text-xs mt-2 flex items-center gap-2">
+                            <i class="fa-solid fa-location-dot text-amber-500"></i> {{ $project['location'] }}
+                        </p>
+                        
+                        <div class="mt-6 pt-6 border-t border-stone-900 grid gap-2">
+                            @foreach($project['specs'] as $spec)
+                            <div class="flex items-center text-stone-300 text-xs font-medium">
+                                <svg class="w-3.5 h-3.5 text-amber-500 mr-2.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                {{ $spec }}
+                            </div>
+                            @endforeach
+                        </div>
+                    </div>
                 </div>
-                <div class="p-6">
-                    <h3 class="text-lg font-bold group-hover:text-amber-500 transition-colors">Global Logistics Distribution Hub</h3>
-                    <p class="text-stone-500 text-xs mt-2 flex items-center gap-2"><i class="fa-solid fa-location-dot text-amber-500"></i> Region North Asset Division</p>
+                
+                <div class="p-6 pt-0">
+                    <button class="w-full py-3 bg-stone-900 border border-stone-800 group-hover:bg-amber-500 group-hover:text-stone-950 text-stone-300 text-[10px] font-bold uppercase tracking-widest rounded-xl transition-all duration-300">
+                        Explore Case File
+                    </button>
                 </div>
             </div>
-            @endfor
+            @endforeach
         </div>
     </div>
 </section>
 
-<section id="testimonials" class="py-32 max-w-5xl mx-auto px-6">
-    <div class="text-center mb-16">
-        <i class="fa-solid fa-quote-left text-5xl text-amber-500/20"></i>
+<section id="testimonials" class="py-32 max-w-7xl mx-auto px-6">
+    <div class="text-center max-w-3xl mx-auto mb-20">
+        <span class="text-amber-500 text-xs uppercase font-bold tracking-widest">Client Endorsements</span>
+        <h2 class="text-3xl md:text-5xl font-black tracking-tight mt-3">Trusted by Enterprise Leaders</h2>
+        <div class="w-16 h-1 bg-amber-500 mx-auto mt-4 rounded-full"></div>
     </div>
     
-    <div class="overflow-hidden relative w-full">
-        <div id="testimonial-slider" class="flex transition-transform duration-700 ease-out">
-            <div class="min-w-full text-center px-4">
-                <p class="text-xl md:text-3xl font-medium leading-relaxed italic text-stone-200">
-                    "Apex Infra flawlessly executed our warehouse corridor construction framework on budget and ahead of time. Their safety control and engineering expertise are unmatched globally."
+    <div class="grid md:grid-cols-2 gap-8">
+        @php
+            $testimonials = [
+                [
+                    'quote' => 'Apex Infra flawlessly executed our warehouse corridor construction framework on budget and ahead of time. Their safety control and engineering expertise are unmatched globally.',
+                    'name' => 'Marcus Sterling',
+                    'role' => 'VP Development, Nexus Global Logistics',
+                    'avatar' => 'https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=150&h=150&q=80'
+                ],
+                [
+                    'quote' => 'Their tactical engineering capabilities solved unique structural constraints seamlessly. Highly collaborative workforce solutions across multi-billion-dollar investments.',
+                    'name' => 'Elena Rostova',
+                    'role' => 'Chief Procurement Officer, Velo Energy Systems',
+                    'avatar' => 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=150&h=150&q=80'
+                ]
+            ];
+        @endphp
+
+        @foreach($testimonials as $client)
+        <div class="bg-stone-900/40 border border-stone-800/80 rounded-3xl p-8 md:p-10 shadow-xl flex flex-col justify-between relative overflow-hidden">
+            <div class="absolute top-6 right-8 text-stone-800 text-6xl font-serif select-none pointer-events-none">“</div>
+            
+            <div>
+                <div class="flex gap-1 mb-6">
+                    @for($s=0; $s<5; $s++)
+                        <i class="fa-solid fa-star text-amber-500 text-xs"></i>
+                    @endfor
+                </div>
+                <p class="text-stone-200 text-base md:text-lg leading-relaxed italic relative z-10">
+                    "{{ $client['quote'] }}"
                 </p>
-                <h4 class="mt-8 text-sm uppercase font-black tracking-widest text-amber-500">Marcus Sterling</h4>
-                <p class="text-stone-500 text-xs mt-1">VP Development, Nexus Global Logistics</p>
             </div>
-            <div class="min-w-full text-center px-4">
-                <p class="text-xl md:text-3xl font-medium leading-relaxed italic text-stone-200">
-                    "Their tactical engineering capabilities solved unique structural constraints seamlessly. Highly collaborative workforce solutions across multi-billion-dollar investments."
-                </p>
-                <h4 class="mt-8 text-sm uppercase font-black tracking-widest text-amber-500">Elena Rostova</h4>
-                <p class="text-stone-500 text-xs mt-1">Chief Procurement Officer, Velo Energy Systems</p>
+
+            <div class="mt-8 pt-6 border-t border-stone-800/60 flex items-center gap-4">
+                <img src="{{ $client['avatar'] }}" alt="{{ $client['name'] }}" class="w-12 h-12 rounded-full object-cover border border-amber-500/30 shadow-md">
+                <div>
+                    <h4 class="text-sm uppercase font-black tracking-widest text-amber-500">{{ $client['name'] }}</h4>
+                    <p class="text-stone-500 text-xs mt-0.5">{{ $client['role'] }}</p>
+                </div>
             </div>
         </div>
+        @endforeach
     </div>
 </section>
 
